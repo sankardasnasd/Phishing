@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table border="1">
+
+        <tr>
+            <th>Name</th>
+          <td>
+              <img src="{{ data.image }}" width="=150px" height="150px"><br>
+              {{ data.name }}
+          </td>        </tr>
+        <tr>
+            <th>Email</th>
+        <td>{{ data.email }}</td>
+        </tr>  <tr>
+            <th>Phone</th>
+        <td>{{ data.phone }}</td>
+        </tr>
+
+
+        <tr>
+            <th>Address</th>
+        <td>
+
+            {{ data.place }}<br>
+            {{ data.pin }}<br>
+            {{ data.post }}<br>
+
+        </td>
+        </tr>
+
+         <tr>
+            <th></th>
+             <td><a href="/myapp/edit_manu/{{ data.id }}" >Edit</a></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

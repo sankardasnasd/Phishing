@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="/myapp/edit_manu_post/" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table border="1">
+
+        <tr>
+            <input type="hidden" value="{{ data.id }}" name="id">
+            <th>Name</th>
+            <td><input type="text" value="{{ data.name }}" name="name" ></td>
+        </tr>  <tr>
+            <th>Email</th>
+            <td><input type="email"  value="{{ data.email }}" name="email" ></td>
+        </tr>  <tr>
+            <th>Phone</th>
+            <td><input type="text"  value="{{ data.phone }}" name="phone" ></td>
+        </tr>
+
+        <tr>
+            <th>image</th>
+            <td><input type="file"  value="" name="image" ><br>
+            <img src="{{ data.image }}" width="200px" height="200px">
+            </td>
+        </tr>
+        <tr>
+            <th>Place</th>
+            <td><input type="text" value="{{ data.place }}" name="place" ></td>
+        </tr>
+        <tr>
+            <th>Pin</th>
+            <td><input type="text" name="pin" value="{{ data.pin }}" ></td>
+        </tr>
+        <tr>
+            <th>Post</th>
+            <td><input type="text" name="post" value="{{ data.post }}" ></td>
+        </tr>
+
+         <tr>
+            <th></th>
+            <td><input type="submit"  ></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

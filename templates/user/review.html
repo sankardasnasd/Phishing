@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/myapp//" method="post">
+{% csrf_token %}
+    <table class="table table-bordered">
+        <tr>
+            <td>From</td>
+            <td><input type="date" name="from" class="form-control"></td>
+            <td>To</td>
+            <td><input type="date" name="to" class="form-control"></td>
+            <td><input type="submit" name="button" value="SEARCH" class="btn btn-success"></td>
+        </tr>
+    </table>
+    <table class="table table-bordered">
+        <tr>
+            <td>Sl.no</td>
+            <td>User</td>
+            <td>Date</td>
+            <td>Review</td>
+            <td>Rating</td>
+        </tr>
+        {% for i in dt %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ i.USER.Name }}</td>
+            <td>{{ i.date }}</td>
+            <td>{{ i.review }}</td>
+        <td>&nbsp;{{ i.rating }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</form>
+</body>
+</html>
+
+</body>
+</html>
